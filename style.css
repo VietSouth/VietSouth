@@ -1,0 +1,696 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+.website {
+    position: relative;
+    width: 153.5rem;
+    height: auto;
+}
+
+.header {
+    position: absolute;
+    width: 153.5rem;
+    height: 90rem;
+    background: black;
+}
+
+.header__covid-notification {
+    box-sizing: border-box;
+    padding-top: 1rem;
+    width: 100%;
+    height: 3rem;
+    text-align: center;
+}
+
+.header__covid-notification-link {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.header__toolbar-box {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 8rem;
+    background: white;
+}
+
+.header__toolbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 8rem;
+    box-sizing: border-box;
+    /* border: #333 solid 1px; */
+    /* bài học mới là muốn 3 phần tử tự chia ra đều nhau như phần tool bar thì dùng justify content space between và display flex
+    nhớ là những phần tử đó không được position absolute */
+}
+
+.header__toolbar-items {
+    margin-top: 1rem;
+    box-sizing: border-box;
+}
+
+.header__toolbar-items:nth-child(1) {
+    display: flex;
+    width: 14rem;
+    height: 6rem;
+    line-height: 6rem;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #ff385c;
+}
+
+.header__toolbar-items:nth-child(2) {
+    position: relative;
+    left: 5rem;
+    display: flex;
+    box-sizing: border-box;
+    width: 30rem;
+    height: 6rem;
+    line-height: 6rem;
+    align-items: center;
+}
+
+.header__toolbar-items:nth-child(3) {
+    display: flex;
+    width: auto;
+    height: 6rem;
+    line-height: 6rem;
+    align-items: center;
+}
+
+.website-icon {
+    font-size: 5rem;
+    font-weight: 800;
+    color: #ff385c;
+}
+
+
+/* Phan header input */
+
+.header__toolbar-finding {
+    width: 100%;
+    height: 100%;
+    border-radius: 5rem;
+    border: #757575 solid 1px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.toolbar-finding-icon {
+    position: absolute;
+    right: 1rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 20rem;
+    border: none;
+    background: #ff385c;
+    transition: 0.2s;
+}
+
+.toolbar-finding-icon:hover {
+    cursor: pointer;
+    transform: scale(0.8);
+    transition: 0.2s;
+}
+
+.finding-icon {
+    font-size: 1.6rem;
+    color: white;
+}
+
+
+/* Phan menu */
+
+.toolbar-items-list {
+    flex-direction: row;
+    display: flex;
+    width: auto;
+    height: auto;
+    line-height: auto;
+    align-items: center;
+}
+
+.toolbar-items {
+    position: relative;
+    margin: 0 0.5rem;
+    font-size: 1.6rem;
+    box-sizing: border-box;
+    border-radius: 4rem;
+    display: flex;
+    list-style: none;
+    transition: 0.2s;
+}
+
+.toolbar-items:hover {
+    cursor: pointer;
+    background: #cac7c7;
+    transition: 0.2s;
+}
+
+.toolbar-items:nth-child(1) {
+    color: black;
+    height: 4rem;
+    line-height: 4rem;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.toolbar-items:nth-child(2) {
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    align-items: center;
+}
+
+.toolbar-items:nth-child(3) {
+    width: 6rem;
+    height: 4rem;
+    line-height: 4rem;
+    align-items: center;
+    border: #757575 solid 0.1rem;
+}
+
+.globe-icon {
+    position: absolute;
+    font-size: 2rem;
+    padding-left: 1rem;
+}
+
+.toolbar-items-icon-box {
+    display: flex;
+}
+
+.toolbar-items-icon {
+    padding-top: 1rem;
+    padding-left: 0.2rem;
+    margin: 0 0.3rem;
+    width: auto;
+    height: auto;
+}
+
+.menu-icon {
+    font-size: 2rem;
+}
+
+.items-menu-box {
+    display: none;
+    position: absolute;
+    bottom: -23rem;
+    left: -13.5rem;
+    width: 20rem;
+    height: 21rem;
+    background: white;
+    border-radius: 2rem;
+    border: #cac7c7 solid 0.3rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.menu-list {
+    flex-direction: column;
+}
+
+.menu-selection {
+    list-style: none;
+    transition: 0.2s;
+}
+
+.menu-selection:hover {
+    background: #d6d2d2;
+    transition: 0.2s;
+    transform: scale(1.1);
+}
+
+.menu-selection-link {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+}
+
+.toolbar-items:nth-child(3)::after {
+    position: absolute;
+    right: 0;
+    bottom: -3rem;
+    content: "";
+    display: block;
+    width: 6rem;
+    height: 4rem;
+}
+
+.toolbar-items:nth-child(3):hover .items-menu-box {
+    display: block;
+}
+
+.menu-selection:hover .menu-selection-link {
+    color: #ff385c;
+}
+
+
+/* Phan header back ground */
+
+.header__backgound-box {
+    z-index: 1;
+    position: relative;
+    top: 3rem;
+    width: 100%;
+    height: 75rem;
+    background: url(https://a0.muscache.com/im/pictures/0bcabcc8-b18a-470d-95ff-84f41df5d33f.jpg?im_w=720);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+.header__background {
+    position: relative;
+    text-align: center;
+}
+
+.header__background-title {
+    width: 55rem;
+    height: 20rem;
+    position: relative;
+    top: 45rem;
+    left: 40rem;
+    font-size: 4rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+.header__background-button {
+    position: relative;
+    top: 37rem;
+    left: 2.8rem;
+    background: white;
+    border-radius: 2rem;
+    border: none;
+    box-sizing: border-box;
+    padding: 1.5rem 1.5rem;
+    font-size: 1.6rem;
+    color: rgb(167, 65, 167);
+    transition: 0.2s;
+}
+
+.header__background-button:hover {
+    cursor: pointer;
+    transform: scale(0.8);
+    transition: 0.2s;
+}
+
+
+/* Phần body */
+
+.website-body {
+    position: absolute;
+    top: 90rem;
+    width: 153.5rem;
+    height: 204rem;
+    box-sizing: border-box;
+}
+
+.body-main {
+    position: absolute;
+    top: 5rem;
+    box-sizing: border-box;
+}
+
+
+/* Phan body 1 */
+
+.body-main-1 {
+    display: inline;
+}
+
+.body-title {
+    color: black;
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.body-city-list {
+    display: flex;
+    margin-top: 5rem;
+}
+
+.city-selection {
+    border-radius: 2rem;
+    display: inline;
+    list-style: none;
+    width: 30rem;
+    height: 40rem;
+    margin: 0 1.4rem;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.city-selection:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.3s;
+    z-index: 1;
+}
+
+
+/* Phan img */
+
+.city-selection-img {
+    width: 100%;
+    height: 58%;
+}
+
+.city-selection-img-1 {
+    background: url(https://c0.wallpaperflare.com/preview/83/338/496/style-trung-khanh-cao-bang-vietnam.jpg);
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-size: 30rem 23rem;
+}
+
+.city-selection-img-2 {
+    background: url(https://www.wallpapers13.com/wp-content/uploads/2019/07/Stockholm-Capital-of-Sweden-sunset-Landscape-Photography-4K-Ultra-HD-TV-Wallpaper-for-Desktop-Laptop-Tablet-And-Mobile-Phones-1920x1200-1920x1080.jpg);
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-size: 30rem 23rem;
+}
+
+.city-selection-img-3 {
+    background: url(https://media.istockphoto.com/photos/beauty-da-lat-highland-homes-interspersed-picture-id621486586?b=1&k=20&m=621486586&s=170667a&w=0&h=Ak8EwbtEIauH5pBn4oRUCKoBSwqN4mhkdt4K_Cl_KHI=);
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-size: 30rem 23rem;
+}
+
+.city-selection-img-4 {
+    background: url(https://wallpaperaccess.com/full/27033.jpg);
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-size: 30rem 23rem;
+}
+
+
+/* Phan name */
+
+.city-selection-name {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 42%;
+}
+
+.city-selection-name-1 {
+    background-size: 100%;
+    background: #c57777;
+}
+
+.city-selection-name-2 {
+    background-size: 100%;
+    background: #04346b4b;
+}
+
+.city-selection-name-3 {
+    background-size: 100%;
+    background: #96c78c;
+}
+
+.city-selection-name-4 {
+    background-size: 100%;
+    background: #e4bc80;
+}
+
+.city-selection-title {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+}
+
+.city-selection-distance {
+    position: absolute;
+    top: 5rem;
+    left: 2rem;
+    font-size: 1.6rem;
+    color: white;
+}
+
+
+/* Phan body 2 */
+
+.body-main-2 {
+    position: absolute;
+    top: 55rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.body-main-2-line-img-1 {
+    position: absolute;
+    top: 9rem;
+    width: 100%;
+}
+
+.line-img-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.line-img {
+    position: relative;
+    width: 63rem;
+    height: 60rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.line-img:first-child {
+    background: url(https://a0.muscache.com/im/pictures/3290306e-8e26-4c77-a96a-777e554c5222.jpg?im_w=320);
+    background-repeat: no-repeat;
+    background-size: 63rem 60rem;
+}
+
+.line-img:last-child {
+    background: url(https://a0.muscache.com/im/pictures/c1bdf53f-2a19-4529-aa9b-1b0e6bd8d0ee.jpg?im_w=720);
+    background-repeat: no-repeat;
+    background-size: 63rem 60rem;
+}
+
+.line-img-title {
+    position: absolute;
+    width: 40rem;
+    top: 2rem;
+    left: 2rem;
+    font-size: 4rem;
+    font-weight: 600;
+    color: white;
+    box-sizing: border-box;
+}
+
+.line-img-title:first-child {}
+
+.line-img-title:last-child {}
+
+.line-img-button {
+    box-sizing: border-box;
+    border-radius: 1rem;
+    border: none;
+    padding: 1rem 1rem;
+    font-size: 2rem;
+    color: black;
+    transition: 0.2s;
+}
+
+.line-img-button:hover {
+    cursor: pointer;
+    background: #cac5c5;
+    transition: 0.2s;
+    transform: scale(0.9);
+}
+
+.line-img-button-1 {
+    margin-top: 20rem;
+    margin-left: 2rem;
+}
+
+.line-img-button-2 {
+    margin-top: 15rem;
+    margin-left: 2rem;
+}
+
+
+/* Phan line 2 cua body */
+
+.body-main-2-line-img-2 {
+    position: absolute;
+    top: 74rem;
+    width: 100%;
+    height: 65rem;
+    background: url(https://a0.muscache.com/im/pictures/0903a029-e330-41f6-add2-652954f62185.jpg?im_w=720);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.line-2-img-title {
+    position: absolute;
+    top: 2rem;
+    left: 4rem;
+    font-size: 8rem;
+    color: white;
+    font-weight: 600;
+    width: 60rem;
+}
+
+.line-2-img-button {
+    position: absolute;
+    top: 40rem;
+    left: 4rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    border: none;
+    width: auto;
+    padding: 1rem 1rem;
+    font-size: 1.6rem;
+    color: black;
+    transition: 0.2s;
+}
+
+.line-2-img-button:hover {
+    cursor: pointer;
+    background: #cac5c5;
+    transition: 0.2s;
+    transform: scale(0.9);
+}
+
+
+/* Phan footer */
+
+.website-footer {
+    position: absolute;
+    top: 295rem;
+    width: 153.5rem;
+    height: 52rem;
+    background: #f7f7f7;
+}
+
+.footer-line-1 {
+    display: flex;
+    position: relative;
+    top: 5rem;
+    height: 26rem;
+}
+
+.line-1-list-box {
+    box-sizing: border-box;
+    position: relative;
+    display: inline;
+    text-align: left;
+    width: 35rem;
+    height: auto;
+}
+
+.line-1-list-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.line-1-list {
+    display: inline;
+}
+
+.line-1-items {
+    list-style: none;
+    margin: 2rem 0;
+    transition: 0.2s;
+}
+
+.line-1-items:hover {
+    transition: 0.2s;
+    transform: scale(1.1) translateX(2rem);
+    text-decoration: underline;
+}
+
+.line-1-items-link {
+    font-size: 1.4rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-hr {
+    margin-top: 10rem;
+}
+
+
+/* footer line 2 */
+
+.footer-line-2 {
+    position: absolute;
+    display: flex;
+    top: 40rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.footer-line-2-box {
+    display: flex;
+}
+
+.footer-line-2-list {
+    display: flex;
+}
+
+.footer-line-2-items {
+    width: auto;
+    height: 2rem;
+    line-height: 2rem;
+    display: flex;
+    margin: 0 1rem;
+    list-style: none;
+    align-items: center;
+}
+
+.footer-line-2-items:hover .footer-line-2-items-link,
+.footer-line-2-title {
+    text-decoration: underline;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.footer-line-2-items-link {
+    text-decoration: none;
+}
+
+.footer-line-2-items-link,
+.footer-line-2-title {
+    font-size: 1.4rem;
+    color: black;
+    transition: 0.2s;
+}
+
+.items-icon {
+    position: relative;
+    top: 0.2rem;
+    font-size: 2rem;
+    margin: 0 0.5rem;
+}
+
+.footer-icon {
+    margin: 0 0.5rem;
+    font-size: 2.5rem;
+    color: black;
+}
+
+.footer-line-2-items:hover .footer-icon {
+    transform: scale(1.2);
+}
